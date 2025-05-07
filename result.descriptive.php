@@ -400,7 +400,7 @@
         </thead>
         <tbody>
             <?php
-                $i = $o->dbquery("SELECT a.id, title, if(xray_type=1,'Upper Extremities','Lower Extremities') as xray_type, b.fullname FROM xray_templates a left join options_doctors b on a.template_owner = b.id ORDER BY b.fullname, title;");
+                $i = $o->dbquery("SELECT a.id, title, if(xray_type=1,'Upper Extremities','Lower Extremities') as xray_type, b.fullname FROM pccmain.xray_templates a left join options_doctors b on a.template_owner = b.id ORDER BY b.fullname, title;");
                 while($tdetails = $i->fetch_array()) {
                     echo "<tr>
                         <td>$tdetails[0]</td>
